@@ -6,7 +6,8 @@ import { z } from 'zod';
 export const env = createEnv({
   server: {
     NODE_ENV: z.enum(['development', 'test', 'production']),
-    OPENAI_API_KEY: z.string(),
+    GOOGLE_GENERATIVE_AI_API_KEY: z.string(),
+
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1).optional(),
@@ -14,7 +15,7 @@ export const env = createEnv({
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
-    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    GOOGLE_GENERATIVE_AI_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
   },
 });
 
